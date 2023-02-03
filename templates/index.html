@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/css/minimal-table.css" rel="stylesheet" type="text/css">
+    <style>
+        .auth {
+        background-color: #17a2b8;
+        padding: 10px;
+        border-radius: 15px;
+        font-family: sans-serif;
+        padding: 30px;
+        margin-top: 100px;
+        margin-left: 40%;
+        font-size: 1.5rem;
+        color: white;
+        min-width: 300px;
+        width: 10%
+        }
+
+    </style>
+</head>
+<body>
+    <header style="
+        background-color: #17a2b8;
+        font-size: 2rem;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        font-family: sans-serif;
+        "> AQ Мониторинг сессий тестирования </header>
+
+    {%  if user_authorized  %}
+    <table>
+        <tr>
+            <th>Серийный номер</th>
+            <th>Статус</th>
+            <th>Серийный номер</th>
+            <th>Статус</th>
+        </tr>
+        {%  for i in range(listLen // 2)  %}
+            <tr>
+                <th>{{  serialNums[i]  }}</th>
+                <td>{{  status[i]  }}</td>
+                <th>{{  serialNums[(listLen // 2) + i]  }}</th>
+                <td>{{  status[(listLen // 2) + i]  }}</td>
+            </tr>
+        {%  endfor  %}
+        {%  if listLen % 2 == 1  %}
+            <tr>
+                <th>{{  serialNums[-1]  }}</th>
+                <td>{{  status[-1]  }}</td>
+            </tr>
+        {%  endif  %}
+    </table>
+    {%  endif  %}
+
+    {% if not user_authorized %}
+    <div class="auth">
+        <h1> Авторизация </h1>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}
+            </p>
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+    {%  endif  %}
+</body>
+</html>
+

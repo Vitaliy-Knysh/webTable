@@ -1,0 +1,25 @@
+html {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+caption {
+  padding: 10px;
+}
