@@ -16,10 +16,6 @@ td, th {
   padding: 10px 20px;
 }
 
-tr:nth-child(even) {
-  background-color: #D6EEEE;
-}
-
 caption {
   padding: 10px;
 }
