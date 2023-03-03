@@ -2,32 +2,10 @@
 <html lang="en">
 <head>
     <link href="static/css/minimal-table.css" rel="stylesheet" type="text/css">
-    <style>
-        .progress {
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        background-size: auto;
-        }
-        progress::-webkit-progress-bar {
-        background: #eee;
-        border-radius: 9px;
-        }
-        progress::-webkit-progress-value {
-        background: #1ab;
-        border-radius: 9px;
-        }
-    </style>
+    <link href="static/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header style="
-        background-color: #17a2b8;
-        font-size: 2rem;
-        color: white;
-        padding: 10px;
-        border-radius: 15px;
-        font-family: sans-serif;">Сотрудник {{ username }}, стойка номер {{ stand_id }} </header>
-
+    <header>Сотрудник {{ username }}, стенд номер {{ stand_id }} </header>
     <table>
         <tr>
             <th>Серийный номер</th>
@@ -40,7 +18,7 @@
                 <td >{{  status[i]  }}</td>
                 <td>
                     <div style="align: right">
-                        <progress class="progress" max="100" value={{ progress[i] }} > </progress>
+                        <progress max="100" value={{ progress[i] }} > </progress>
                     </div>
                 </td>
             </tr>

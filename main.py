@@ -142,7 +142,8 @@ def parse_dict(dict):
         elif i['status'][7] == 'i':
             str_to_append += ' в процессе, начат ' + str(datetime.strptime(i['test start time'], '%Y-%m-%d %H:%M:%S.%f')
                                                          - datetime.utcnow()) + ' назад'
-            str_to_append.replace('days', 'дней')
+            str_to_append = str_to_append.replace('days', 'дней')
+            print(str_to_append)
             bgcolors.append('#ffffff')  # white
         status.append(str_to_append)
         progress.append(i['progress'])
